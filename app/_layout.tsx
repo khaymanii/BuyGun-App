@@ -4,7 +4,8 @@ import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
 import { useEffect } from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -20,36 +21,25 @@ export default function RootLayout() {
   }, [loaded]);
 
   if (!loaded) {
-    return (
-      <View style={styles.splashContainer}>
-        <Text style={styles.logoText}>Buygun</Text>
-      </View>
-    );
+    return;
   }
 
   return (
-    <>
-      {" "}
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
-      </Stack>
-      <StatusBar style="auto" />
-    </>
+    <SafeAreaView>
+      <View style={styles.splashScreen}>
+        {" "}
+        <Stack>
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen name="+not-found" />
+        </Stack>
+        <StatusBar style="auto" />
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  splashContainer: {
+  splashScreen: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "#ffffff",
-  },
-  logoText: {
-    fontSize: 32,
-    fontWeight: "semibold",
-    color: "#000",
-    fontFamily: "SpaceMono",
   },
 });

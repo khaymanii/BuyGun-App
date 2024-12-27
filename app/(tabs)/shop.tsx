@@ -1,10 +1,13 @@
-import { View, Text } from "react-native";
+import { View, Text, ScrollView } from "react-native";
+import tw from "twrnc";
 import React from "react";
 
 export default function shop() {
   return (
-    <View>
-      <Text>shop</Text>
-    </View>
+    <ScrollView style={tw`bg-white`}>
+      <View>
+        <Text>shop</Text>
+      </View>
+    </ScrollView>
   );
 }

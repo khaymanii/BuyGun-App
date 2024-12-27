@@ -1,10 +1,13 @@
-import { View, Text } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import React from "react";
+import tw from "twrnc";
 
 export default function cart() {
   return (
-    <View>
-      <Text>cart</Text>
-    </View>
+    <ScrollView style={tw`bg-white`}>
+      <View>
+        <Text>cart</Text>
+      </View>
+    </ScrollView>
   );
 }

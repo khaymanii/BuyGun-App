@@ -1,10 +1,14 @@
-import { View, Text } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import React from "react";
+import tw from "twrnc";
 
 export default function index() {
   return (
-    <View>
-      <Text>index</Text>
-    </View>
+    <ScrollView style={tw`bg-white`}>
+      {" "}
+      <View>
+        <Text>index</Text>
+      </View>
+    </ScrollView>
   );
 }
