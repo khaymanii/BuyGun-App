@@ -25,7 +25,6 @@ export default function RootLayout() {
   }
 
   return (
-    <SafeAreaView>
       <View style={styles.splashScreen}>
         {" "}
         <Stack>
@@ -34,7 +33,6 @@ export default function RootLayout() {
         </Stack>
         <StatusBar style="auto" />
       </View>
-    </SafeAreaView>
   );
 }
 
