@@ -1,43 +1,78 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
-import { Platform } from 'react-native';
+import { Tabs } from "expo-router";
+import { Platform } from "react-native";
+import AntDesign from "@expo/vector-icons/AntDesign";
+import MaterialIcons from "@expo/vector-icons/MaterialIcons";
+import FontAwesome from "@expo/vector-icons/FontAwesome";
+import Ionicons from "@expo/vector-icons/Ionicons";
 
-import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
-import TabBarBackground from '@/components/ui/TabBarBackground';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+const Colors = {
+  light: { tint: "#32CD32" }, // Lime Green for light mode
+  dark: { tint: "#ffffff" },
+};
+
+const colorScheme = "light"; // Replace with dynamic color scheme logic if needed
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
+        tabBarActiveTintColor: Colors[colorScheme ?? "light"].tint,
         headerShown: false,
-        tabBarButton: HapticTab,
-        tabBarBackground: TabBarBackground,
         tabBarStyle: Platform.select({
           ios: {
-            // Use a transparent background on iOS to show the blur effect
-            position: 'absolute',
+            backgroundColor: "ffffff",
+            position: "absolute",
+            borderTopWidth: 0,
           },
-          default: {},
+          android: {
+            backgroundColor: "#ffffff",
+            elevation: 5,
+          },
+          default: {
+            backgroundColor: "#ffffff",
+          },
         }),
-      }}>
+      }}
+    >
+      {/* Home Tab */}
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: "Home",
+          tabBarIcon: () => <FontAwesome name="home" size={24} color="black" />,
         }}
       />
+
+      {/* Explore Tab */}
       <Tabs.Screen
-        name="explore"
+        name="shop"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: "Shop",
+          tabBarIcon: () => (
+            <Ionicons name="storefront" size={24} color="black" />
+          ),
+        }}
+      />
+
+      {/* Cart Tab */}
+      <Tabs.Screen
+        name="cart"
+        options={{
+          title: "Cart",
+          tabBarIcon: () => (
+            <AntDesign name="shoppingcart" size={24} color="black" />
+          ),
+        }}
+      />
+
+      {/* Contact Tab */}
+      <Tabs.Screen
+        name="contact"
+        options={{
+          title: "Contact",
+          tabBarIcon: () => (
+            <MaterialIcons name="contacts" size={24} color="black" />
+          ),
         }}
       />
     </Tabs>
