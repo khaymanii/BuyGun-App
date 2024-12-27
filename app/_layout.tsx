@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
-import { useEffect } from "react";
-import { View, StyleSheet } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { View } from "react-native";
+import tw from "twrnc";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -21,23 +20,27 @@ export default function RootLayout() {
   }, [loaded]);
 
   if (!loaded) {
-    return;
+    return null;
   }
 
   return (
-      <View style={styles.splashScreen}>
-        {" "}
-        <Stack>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="+not-found" />
-        </Stack>
-        <StatusBar style="auto" />
-      </View>
+    <View style={tw`flex-1`}>
+      <Stack>
+        <Stack.Screen
+          name="(tabs)"
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen
+          name="home"
+          options={{
+            headerShown: false,
+          }}
+        />
+        <Stack.Screen name="not-found" />
+      </Stack>
+      <StatusBar style="auto" />
+    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  splashScreen: {
-    flex: 1,
-  },
-});
