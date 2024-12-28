@@ -23,7 +23,7 @@ export default function TabNavigator() {
             backgroundColor: "#ffffff",
             color: "#000000",
             paddingTop: 20,
-            paddingBottom: 50,
+            paddingBottom: 60,
           },
         }),
       }}
@@ -32,15 +32,25 @@ export default function TabNavigator() {
         name="index"
         options={{
           title: "Home",
-          tabBarIcon: () => <AntDesign name="home" size={24} color="black" />,
+          tabBarIcon: ({ focused }) => (
+            <AntDesign
+              name="home"
+              size={24}
+              color={focused ? Colors[colorScheme ?? "light"].tint : "black"}
+            />
+          ),
         }}
       />
       <Tabs.Screen
         name="shop"
         options={{
           title: "Shop",
-          tabBarIcon: () => (
-            <Ionicons name="storefront-outline" size={24} color="black" />
+          tabBarIcon: ({ focused }) => (
+            <Ionicons
+              name="storefront-outline"
+              size={24}
+              color={focused ? Colors[colorScheme ?? "light"].tint : "black"}
+            />
           ),
         }}
       />
@@ -48,8 +58,12 @@ export default function TabNavigator() {
         name="cart"
         options={{
           title: "Cart",
-          tabBarIcon: () => (
-            <AntDesign name="shoppingcart" size={24} color="black" />
+          tabBarIcon: ({ focused }) => (
+            <AntDesign
+              name="shoppingcart"
+              size={24}
+              color={focused ? Colors[colorScheme ?? "light"].tint : "black"}
+            />
           ),
         }}
       />
@@ -57,11 +71,11 @@ export default function TabNavigator() {
         name="contact"
         options={{
           title: "Contact",
-          tabBarIcon: () => (
+          tabBarIcon: ({ focused }) => (
             <MaterialCommunityIcons
               name="contacts-outline"
               size={24}
-              color="black"
+              color={focused ? Colors[colorScheme ?? "light"].tint : "black"}
             />
           ),
         }}

@@ -6,7 +6,7 @@ import tw from "twrnc";
 export default function Header() {
   return (
     <View
-      style={tw`flex-row justify-between items-center py-6 px-4 border-b bg-white`}
+      style={tw`flex-row justify-between items-center py-4 px-4 border-b bg-white`}
     >
       <Text style={tw`text-xl font-semibold`}>Buygun</Text>
       <View style={tw`flex-row items-center gap-2`}>
