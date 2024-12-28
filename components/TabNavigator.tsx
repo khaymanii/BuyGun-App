@@ -1,8 +1,7 @@
 import { Tabs } from "expo-router";
 import { Platform } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
-import MaterialIcons from "@expo/vector-icons/MaterialIcons";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+import MaterialCommunityIcons from "@expo/vector-icons/MaterialCommunityIcons";
 import Ionicons from "@expo/vector-icons/Ionicons";
 
 const Colors = {
@@ -20,20 +19,11 @@ export default function TabNavigator() {
         tabBarInactiveTintColor: "black",
         headerShown: false,
         tabBarStyle: Platform.select({
-          ios: {
-            backgroundColor: "#ffffff",
-            position: "absolute",
-            borderTopWidth: 0,
-          },
-          android: {
-            backgroundColor: "#ffffff",
-            elevation: 5,
-          },
           default: {
             backgroundColor: "#ffffff",
             color: "#000000",
-            paddingTop: 30,
-            paddingBottom: 30,
+            paddingTop: 20,
+            paddingBottom: 50,
           },
         }),
       }}
@@ -42,7 +32,7 @@ export default function TabNavigator() {
         name="index"
         options={{
           title: "Home",
-          tabBarIcon: () => <FontAwesome name="home" size={24} color="black" />,
+          tabBarIcon: () => <AntDesign name="home" size={24} color="black" />,
         }}
       />
       <Tabs.Screen
@@ -50,7 +40,7 @@ export default function TabNavigator() {
         options={{
           title: "Shop",
           tabBarIcon: () => (
-            <Ionicons name="storefront" size={24} color="black" />
+            <Ionicons name="storefront-outline" size={24} color="black" />
           ),
         }}
       />
@@ -68,7 +58,11 @@ export default function TabNavigator() {
         options={{
           title: "Contact",
           tabBarIcon: () => (
-            <MaterialIcons name="contacts" size={24} color="black" />
+            <MaterialCommunityIcons
+              name="contacts-outline"
+              size={24}
+              color="black"
+            />
           ),
         }}
       />
