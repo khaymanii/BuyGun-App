@@ -1,19 +1,4 @@
-type Product = {
-  id: number;
-  productName: string;
-  category: string;
-  brand: string;
-  price: number;
-  caliber: string;
-  weight: string;
-  material: string;
-  image: string;
-  description: string;
-
-  quantity: number;
-};
-
-export const products: Product[] = [
+export const products = [
   {
     id: 1,
     productName: "Glock 19",
@@ -23,7 +8,7 @@ export const products: Product[] = [
     caliber: "9mm",
     weight: "670g",
     material: "Polymer",
-    image: "/assets/images/ak7bg.png",
+    image: require("@/assets/images/ak7bg.png"),
     description:
       "The Glock 19 Gen 5 is a compact 9mm handgun perfect for personal defense.",
     quantity: 25,
@@ -37,7 +22,7 @@ export const products: Product[] = [
     caliber: "12 gauge",
     weight: "3kg",
     material: "Steel",
-    image: "/assets/images/ak5bg.png",
+    image: require("@/assets/images/ak5bg.png"),
     description:
       "The Remington 870 Tactical is known for its versatility and reliability in self-defense.",
     quantity: 12,
@@ -51,7 +36,7 @@ export const products: Product[] = [
     caliber: "5.56mm",
     weight: "62gr",
     material: "Brass casing",
-    image: "/assets/images/ak1bg.png",
+    image: require("@/assets/images/ak1bg.png"),
     description:
       "Winchester 5.56 NATO ammunition offers reliable performance for target shooting and defense.",
     quantity: 100,
@@ -65,7 +50,7 @@ export const products: Product[] = [
     caliber: "9mm",
     weight: "833g",
     material: "Polymer and Stainless Steel",
-    image: "/assets/images/ak2bg.png",
+    image: require("@/assets/images/ak2bg.png"),
     description:
       "The Sig Sauer P320 is a modular and versatile full-size handgun for military and law enforcement.",
     quantity: 0,
@@ -79,7 +64,7 @@ export const products: Product[] = [
     caliber: ".308 Win",
     weight: "168gr",
     material: "Brass casing",
-    image: "/assets/images/ak4bg.png",
+    image: require("@/assets/images/ak4bg.png"),
     description:
       "Premium .308 Winchester ammunition designed for precision and hunting applications.",
     quantity: 50,
@@ -94,7 +79,7 @@ export const products: Product[] = [
     caliber: "9mm",
     weight: "115gr",
     material: "Nickel-Plated Brass",
-    image: "/assets/images/coboygunbg.png",
+    image: require("@/assets/images/coboygunbg.png"),
     description:
       "Hornady Critical Defense is designed for personal protection and ensures consistent expansion.",
     quantity: 200,
@@ -108,7 +93,7 @@ export const products: Product[] = [
     caliber: "9mm",
     weight: "620g",
     material: "Polymer",
-    image: "/assets/images/glockbg.png",
+    image: require("@/assets/images/glockbg.png"),
     description:
       "The M&P Shield offers a lightweight, slim profile for easy concealed carry.",
     quantity: 30,
@@ -122,7 +107,7 @@ export const products: Product[] = [
     caliber: "17mm",
     weight: "620g",
     material: "Polymer",
-    image: "/assets/images/ak3bg.png",
+    image: require("@/assets/images/ak3bg.png"),
     description:
       "The M&P Shield offers a lightweight, slim profile for easy concealed carry.",
 

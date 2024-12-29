@@ -19,9 +19,11 @@ export default function contact() {
     <>
       <Header />
       <ScrollView style={tw`bg-white`}>
-        <Text style={tw`text-3xl font-semibold text-center my-8`}>
-          Contact Us
-        </Text>
+        <View
+          style={tw`bg-black w-full h-64 items-center justify-center mb-14`}
+        >
+          <Text style={tw`text-white font-semibold text-3xl`}>Contact Us</Text>
+        </View>
         <View style={tw`h-44 rounded-lg bg-gray-100 text-center p-6 mx-4 mb-4`}>
           {" "}
           <View style={tw`items-center mb-2`}>
