@@ -27,7 +27,7 @@ export default function ShopCard({ product }: { product: Product }) {
         >
           <Image
             source={product.image}
-            style={tw`w-full h-full object-fit`}
+            style={tw`w-full h-full`}
             resizeMode="contain"
           />
         </View>{" "}
