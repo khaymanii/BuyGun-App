@@ -43,6 +43,7 @@
     "react-native-web": "~0.19.13",
     "react-native-webview": "13.12.5",
     "react-navigation": "^5.0.0",
+    "toastify-react-native": "^5.0.3",
     "twrnc": "^4.6.0"
   },
   "devDependencies": {
