@@ -57,7 +57,7 @@ export default function contact() {
         <View style={tw`mx-4 mb-6`}>
           <Image
             source={require("@/assets/images/map.png")}
-            style={tw`w-full`}
+            style={tw`w-full h-[400px] rounded-lg`}
           />
         </View>
         <View style={tw`mx-4 mb-6`}>
