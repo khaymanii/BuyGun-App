@@ -1,9 +1,19 @@
-import { View, Text } from "react-native";
-import React from "react";
+// Header.js
+import { View, Text, TouchableOpacity } from "react-native";
+import React, { useState } from "react";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import tw from "twrnc";
+import { useRouter } from "expo-router";
+import Dropdown from "@/components/Dropdown"; // Import the Dropdown component
 
 export default function Header() {
+  const router = useRouter();
+  const [isDropdownVisible, setDropdownVisible] = useState(false);
+
+  const toggleDropdown = () => {
+    setDropdownVisible((prev) => !prev); // Toggle dropdown visibility
+  };
+
   return (
     <View
       style={tw`flex-row justify-between items-center py-4 px-4 border-b bg-white`}
@@ -20,11 +30,23 @@ export default function Header() {
           </View>
         </View>
 
-        <View style={tw`flex-row items-center ml-4`}>
-          <AntDesign name="user" size={24} color="black" />
-          <Text style={tw`ml-1`}>Ken</Text>
+        <View style={tw`flex-row items-center ml-4 relative`}>
+          <TouchableOpacity
+            onPress={toggleDropdown}
+            style={tw`flex-row items-center`}
+          >
+            <AntDesign name="user" size={24} color="black" />
+            <Text style={tw`ml-1`}>Ken</Text>
+          </TouchableOpacity>
         </View>
       </View>
+
+      {/* Render the dropdown */}
+      <Dropdown
+        isVisible={isDropdownVisible}
+        toggleDropdown={toggleDropdown}
+        router={router}
+      />
     </View>
   );
 }

@@ -9,8 +9,8 @@ export default function checkout() {
   const router = useRouter();
   return (
     <>
-      <Header />
       <ScrollView style={tw`bg-white`}>
+        <Header />
         <View
           style={tw`bg-black w-full h-64 items-center justify-center mb-14`}
         >

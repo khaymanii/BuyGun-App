@@ -6,8 +6,8 @@ import Header from "@/components/Header";
 export default function index() {
   return (
     <>
-      <Header />
       <ScrollView style={tw`bg-white`}>
+        <Header />
         <View>text</View>
         <View>text</View>
         <View>text</View>
