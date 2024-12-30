@@ -5,6 +5,7 @@ import * as SplashScreen from "expo-splash-screen";
 import { StatusBar } from "expo-status-bar";
 import { View } from "react-native";
 import tw from "twrnc";
+import Header from "@/components/Header";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -25,6 +26,7 @@ export default function RootLayout() {
 
   return (
     <View style={tw`flex-1`}>
+      <Header />
       <Stack>
         <Stack.Screen
           name="(tabs)"

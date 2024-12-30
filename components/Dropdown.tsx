@@ -1,38 +1,28 @@
-// Dropdown.js
 import { useRouter } from "expo-router";
+import React from "react";
 import { View, Text, Pressable } from "react-native";
 import tw from "twrnc";
 
-interface DropdownProps {
-  isVisible: boolean;
-  toggleDropdown: () => void;
-  router: ReturnType<typeof useRouter>;
-}
-
-const Dropdown = ({ isVisible, toggleDropdown, router }: DropdownProps) => {
-  if (!isVisible) return null; // Don't render if not visible
-
+const Dropdown = () => {
+  const router = useRouter();
   return (
     <View
       style={[
-        tw`absolute top-16 right-4 bg-white border shadow-md rounded-lg w-32 py-2`,
-        { zIndex: 9999, elevation: 10 },
+        tw`absolute top-16 right-4 bg-white border shadow-md rounded-lg w-40 py-4 text-center`,
       ]}
     >
       <Pressable
-        style={tw`px-4 py-2 border-b`}
+        style={tw`px-4 py-2 border-b text-center`}
         onPress={() => {
           console.log("Navigating to Signup");
-          toggleDropdown(); // Close the dropdown
           router.push("/signup"); // Navigate to signup
         }}
       >
-        <Text style={tw`text-sm text-green-500`}>Signup</Text>
+        <Text style={tw`text-sm text-green-500`}>Sign up</Text>
       </Pressable>
       <Pressable
-        style={tw`px-4 py-2`}
+        style={tw`px-4 py-2 text-center`}
         onPress={() => {
-          toggleDropdown(); // Close the dropdown
           console.log("Logout");
         }}
       >
