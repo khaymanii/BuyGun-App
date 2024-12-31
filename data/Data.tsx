@@ -222,12 +222,15 @@ export const shopCard = [
     id: "1",
     image: require("@/assets/images/glockbg.png"),
     name: "Glock",
-    link: "Collections",
+  },
+  {
+    id: "2",
+    image: require("@/assets/images/ak5bg.png"),
+    name: "AK-47",
   },
   {
     id: "2",
     image: require("@/assets/images/ak7bg.png"),
     name: "Pistol Gun",
-    link: "Collections",
   },
 ];
