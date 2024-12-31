@@ -1,8 +1,11 @@
 import Featured from "@/components/Featured";
 import Hero from "@/components/Hero";
 import ShopCategory from "@/components/ShopCategory";
-import { View, Text, ScrollView } from "react-native";
+import ShopCollection from "@/components/ShopCollection";
+import Footer from "@/components/Footer";
+import { ScrollView } from "react-native";
 import tw from "twrnc";
+import Newsletter from "@/components/Newsletter";
 
 export default function index() {
   return (
@@ -10,6 +13,9 @@ export default function index() {
       <Hero />
       <Featured />
       <ShopCategory />
+      <ShopCollection />
+      <Newsletter />
+      <Footer />
     </ScrollView>
   );
 }
