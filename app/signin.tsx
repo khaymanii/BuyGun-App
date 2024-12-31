@@ -18,7 +18,7 @@ export default function signin() {
       <Image
         source={require("@/assets/images/ak5.jpg")}
         alt="signin image"
-        style={tw`h-[90%] w-[100%] object-contain mb-10`}
+        style={tw`h-[70%] w-[100%] object-contain mb-10`}
       />
       <Text style={tw`text-3xl font-semibold text-center mb-4`}>Buygun</Text>
       <Text style={tw`text-2xl font-semibold mx-2 mb-2`}>Sign In</Text>
