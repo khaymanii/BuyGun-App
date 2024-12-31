@@ -6,7 +6,7 @@ import { useRouter } from "expo-router";
 export default function Hero() {
   const router = useRouter();
   return (
-    <View style={tw`bg-black mb-14`}>
+    <View style={tw`bg-black mb-12`}>
       <View style={tw`w-full h-64 items-center justify-center my-20`}>
         <Text style={tw`text-white font-semibold text-3xl mb-4 text-center`}>
           More Than a tool. It's a Statement.
