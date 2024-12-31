@@ -220,13 +220,13 @@ export const featuredCard = [
 export const shopCard = [
   {
     id: "1",
-    image: "/assets/images/glockbg.png",
+    image: require("@/assets/images/glockbg.png"),
     name: "Glock",
     link: "Collections",
   },
   {
     id: "2",
-    image: "/assets/images/ak7bg.png",
+    image: require("@/assets/images/ak7bg.png"),
     name: "Pistol Gun",
     link: "Collections",
   },
