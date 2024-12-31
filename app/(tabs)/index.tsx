@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import { ScrollView } from "react-native";
 import tw from "twrnc";
 import Newsletter from "@/components/Newsletter";
+import SocialMedia from "@/components/SocialMedia";
 
 export default function index() {
   return (
@@ -15,6 +16,7 @@ export default function index() {
       <ShopCategory />
       <ShopCollection />
       <Newsletter />
+      <SocialMedia />
       <Footer />
     </ScrollView>
   );
