@@ -1,14 +1,15 @@
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity, Pressable } from "react-native";
 import AntDesign from "@expo/vector-icons/AntDesign";
 import tw from "twrnc";
 import { useState } from "react";
 import Dropdown from "./Dropdown";
 import { useAuth } from "@/context/AuthContext";
 import { useCart } from "@/context/CartContext";
+import { useRouter } from "expo-router";
 
 export default function Header() {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
-
+  const router = useRouter();
   const { currentUser } = useAuth();
   const { cartCount } = useCart();
 
@@ -23,7 +24,10 @@ export default function Header() {
         { zIndex: 1000, elevation: 10 },
       ]}
     >
-      <Text style={tw`text-xl font-semibold`}>Buygun</Text>
+      <Pressable onPress={() => router.push("/(tabs)")}>
+        {" "}
+        <Text style={tw`text-xl font-semibold`}>Buygun</Text>
+      </Pressable>
 
       <View style={tw`flex-row items-center`}>
         <View style={tw`relative`}>
