@@ -5,16 +5,68 @@ import {
   TextInput,
   Pressable,
   Image,
+  TouchableOpacity,
+  GestureResponderEvent,
 } from "react-native";
 import tw from "twrnc";
 import EvilIcons from "@expo/vector-icons/EvilIcons";
 import Feather from "@expo/vector-icons/Feather";
 import Fontisto from "@expo/vector-icons/Fontisto";
 import Footer from "@/components/Footer";
+import { useRouter } from "expo-router";
+import { useState } from "react";
+import { addDoc, collection } from "firebase/firestore";
+import { db } from "@/firebaseConfig/firebase";
+import { useAuth } from "@/context/AuthContext";
+import ToastManager, { Toast } from "toastify-react-native";
 
 export default function contact() {
+  const { currentUser } = useAuth();
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const router = useRouter();
+
+  const handleSubmit = async (e: GestureResponderEvent) => {
+    e.preventDefault();
+
+    // Check if the user is logged in
+    if (!currentUser) {
+      Toast.error("You must be logged in to submit the form.");
+      setTimeout(() => {
+        router.push("/signup");
+      }, 2000);
+      return;
+    }
+
+    try {
+      // Save form data along with the user's UID
+      await addDoc(collection(db, "contacts"), {
+        uid: currentUser.uid, // Include the user's UID
+        name,
+        email,
+        message,
+        createdAt: new Date(),
+      });
+
+      // Display success toast
+      Toast.success("Message sent successfully!");
+
+      // Reset form fields
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch (err) {
+      console.error("Error submitting contact form:", err);
+
+      // Display error toast
+      Toast.error("Failed to send the message. Please try again.");
+    }
+  };
+
   return (
     <ScrollView style={tw`bg-white`}>
+      <ToastManager />
       <View style={tw`bg-black w-full h-64 items-center justify-center mb-14`}>
         <Text style={tw`text-white font-semibold text-3xl`}>Contact Us</Text>
       </View>
@@ -58,23 +110,30 @@ export default function contact() {
         <TextInput
           style={tw` p-2 border outline-none rounded-lg w-full mb-4`}
           placeholder="Your Full Name"
+          value={name}
+          onChangeText={(text) => setName(text)}
         />
         <TextInput
           style={tw`p-2 border outline-none rounded-lg w-full mb-4`}
           placeholder="Your Email "
+          value={email}
+          onChangeText={(text) => setEmail(text)}
         />
         <TextInput
           style={tw`p-2 border outline-none rounded-lg w-full mb-6 h-40`}
           placeholder="Your Message"
           multiline={true}
           numberOfLines={4}
+          value={message}
+          onChangeText={(text) => setMessage(text)}
         />
 
-        <Pressable
-          style={tw`w-full p-2 bg-black text-white text-lg rounded-lg text-center`}
+        <TouchableOpacity
+          style={tw`w-full p-2 bg-black rounded-lg `}
+          onPress={handleSubmit}
         >
-          Send Message
-        </Pressable>
+          <Text style={tw`text-white text-lg text-center`}> Send Message</Text>
+        </TouchableOpacity>
       </View>
       <Footer />
     </ScrollView>
