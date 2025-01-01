@@ -16,7 +16,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { doc, setDoc, getDoc } from "firebase/firestore";
-import { auth, db } from "../firebaseConfig/firebase";
+import { auth, db } from "@/firebaseConfig/firebase";
 import { Toast } from "toastify-react-native";
 
 // Define the shape of the context value

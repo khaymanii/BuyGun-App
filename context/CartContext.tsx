@@ -7,13 +7,13 @@ import React, {
   useState,
   ReactNode,
 } from "react";
-import { db } from "../firebaseConfig/firebase";
+import { db } from "@/firebaseConfig/firebase";
 import { doc, getDoc, setDoc, updateDoc, arrayUnion } from "firebase/firestore";
 import { useAuth } from "./AuthContext";
 import { Toast } from "toastify-react-native";
 
 interface CartContextValue {
-  cartCount: number | null; // Allow `null` to represent the loading state
+  cartCount: number | null;
   cartItems: {
     id: string;
     name: string;
