@@ -20,9 +20,9 @@ export default function Hero() {
         </Text>
         <Pressable
           onPress={() => router.push("/shop")}
-          style={tw`bg-green-500 flex items-center justify-center p-2 text-white rounded-lg w-[50%] `}
+          style={tw`bg-green-500 flex items-center justify-center p-2 rounded-lg w-[50%] `}
         >
-          Shop Now
+          <Text style={tw`text-white`}>Shop Now</Text>
         </Pressable>
       </View>
     </View>

@@ -3,9 +3,14 @@ import AntDesign from "@expo/vector-icons/AntDesign";
 import tw from "twrnc";
 import { useState } from "react";
 import Dropdown from "./Dropdown";
+import { useAuth } from "@/context/AuthContext";
+import { useCart } from "@/context/CartContext";
 
 export default function Header() {
   const [isDropdownVisible, setIsDropdownVisible] = useState(false);
+
+  const { currentUser } = useAuth();
+  const { cartCount } = useCart();
 
   const toggleDropdown = () => {
     setIsDropdownVisible((prev) => !prev);
@@ -24,9 +29,11 @@ export default function Header() {
         <View style={tw`relative`}>
           <AntDesign name="shoppingcart" size={24} color="black" />
           <View
-            style={tw`absolute top-0 right-0 w-4 h-4 rounded-full bg-red-500 items-center justify-center`}
+            style={tw`absolute top-0 right-0 w-4 h-4 rounded-full bg-red-500 text-white items-center justify-center`}
           >
-            <Text style={tw`text-white text-xs`}>2</Text>
+            {cartCount && cartCount > 0 && (
+              <Text style={tw`text-xs text-white`}>{cartCount}</Text>
+            )}
           </View>
         </View>
 
@@ -36,7 +43,9 @@ export default function Header() {
             onPress={toggleDropdown}
           >
             <AntDesign name="user" size={24} color="black" />
-            <Text style={tw`ml-1`}>Ken</Text>
+            {currentUser && (
+              <Text style={tw`ml-1`}>{currentUser.displayName}</Text>
+            )}
           </TouchableOpacity>
           {isDropdownVisible && <Dropdown />}
         </View>

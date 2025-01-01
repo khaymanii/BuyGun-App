@@ -114,7 +114,7 @@ export const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
 
         await updateDoc(userCartRef, {
           cartCount: currentCartItems.length + 1,
-          items: arrayUnion(item), // `price` is already a number
+          items: arrayUnion(item),
           subtotal: newSubtotal,
         });
 
