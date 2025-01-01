@@ -3,9 +3,11 @@ import tw from "twrnc";
 import Table from "@/components/Table";
 import { useRouter } from "expo-router";
 import Footer from "@/components/Footer";
+import { useCart } from "@/context/CartContext";
 
 export default function cart() {
   const router = useRouter();
+  const { subtotal } = useCart();
 
   return (
     <ScrollView style={tw`bg-white`}>
@@ -24,7 +26,7 @@ export default function cart() {
             Subtotal:
           </Text>
           <Text style={tw`text-2xl font-semibold tracking-wider text-white`}>
-            $0.00
+            ${subtotal.toFixed(2)}{" "}
           </Text>
         </View>
         <Text style={tw`text-white tracking-wider text-lg mb-6`}>
