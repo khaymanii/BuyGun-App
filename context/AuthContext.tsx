@@ -82,7 +82,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         email: user.email,
         createdAt: new Date(),
       });
-      Toast.success("Signin successful!");
 
       // Fetch and merge Firestore data into currentUser
       const userData = await fetchUserData(user.uid);
@@ -90,9 +89,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
       return user;
     } catch (error) {
-      Toast.error(
-        "Signin failed. Please check your email and password details and try again."
-      );
       console.error("Error signing up:", error);
       throw error;
     }
@@ -110,7 +106,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
         password
       );
       const user = userCredential.user;
-      Toast.success("Signin successful!");
 
       // Fetch Firestore data and merge into currentUser
       const userData = await fetchUserData(user.uid);
@@ -118,9 +113,6 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
 
       return userCredential;
     } catch (error) {
-      Toast.error(
-        "Signin failed. Please check your email and password details and try again."
-      );
       console.error("Error signing in:", error);
       throw error;
     } finally {

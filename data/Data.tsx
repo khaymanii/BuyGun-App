@@ -110,7 +110,6 @@ export const products = [
     image: require("@/assets/images/ak3bg.png"),
     description:
       "The M&P Shield offers a lightweight, slim profile for easy concealed carry.",
-
     quantity: 10,
   },
 ];
@@ -229,7 +228,7 @@ export const shopCard = [
     name: "AK-47",
   },
   {
-    id: "2",
+    id: "3",
     image: require("@/assets/images/ak7bg.png"),
     name: "Pistol Gun",
   },
