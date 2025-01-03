@@ -2,5 +2,5 @@
 
 This is an Full-Stack ecommerce mobile app where customers can buy Arms and Ammunitions. This project was created using Expo, React native, Typescript, twrnc and Firebase.
 
-Buygun Web App : https://buy-gun.vercel.app/              
+Buygun Mobile App Link: https://www.webmobilefirst.com/en/screencasts/10m5eqjvp2bgw3/              
 Buygun Web App Codebase: https://github.com/khaymanii/BuyGun.git
