@@ -2,6 +2,9 @@
 
 This is an Full-Stack ecommerce mobile app where customers can buy Arms and Ammunitions. This project was created using Expo, React native, Typescript, twrnc and Firebase.
 
+**Buygun Mobile App Demo Link:** https://www.webmobilefirst.com/en/screencasts/10m5eqjvp2bgw3/              
+
+
 ## Home page
 ![homeframe](https://github.com/user-attachments/assets/b1f958ab-6ae1-49e1-9ccc-6ebd9f0d04df)
 
@@ -25,5 +28,3 @@ This is an Full-Stack ecommerce mobile app where customers can buy Arms and Ammu
 
 ## Checkout page 
 ![checkout](https://github.com/user-attachments/assets/eeddffc7-e1bf-416e-bb6e-27bc30b0c6e1)
-
-Buygun Mobile App Demo Link: https://www.webmobilefirst.com/en/screencasts/10m5eqjvp2bgw3/              
